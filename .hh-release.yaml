@@ -1,0 +1,9 @@
+version: 22.12.0
+docker_files:
+  sentry-hh: Dockerfile.sentry
+  relay-hh: Dockerfile.relay
+  snuba: Dockerfile.snuba
+docker_context: .
+build_method: nope_build
+update_method: nope_update
+deploy_method: nope_deploy
