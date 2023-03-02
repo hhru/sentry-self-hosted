@@ -1,5 +1,4 @@
----
-version: 22.12.0
+version: 22.12.0-7
 docker_files:
   sentry-hh: docker/Dockerfile.sentry
   relay-hh: docker/Dockerfile.relay
