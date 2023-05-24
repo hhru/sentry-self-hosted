@@ -1,5 +1,87 @@
 # Changelog
 
+## 23.5.1
+
+### Various fixes & improvements
+
+- fix(suggested-fix): key should be 'key', not 'token' (#2146) by @aldy505
+
+## 23.5.0
+
+### Various fixes & improvements
+
+- Add no strict offset reset options to consumers (#2144) by @hubertdeng123
+- Add settings for enabling CSP to config file (#2134) by @hubertdeng123
+- feat: add suggested fix feature (#2115) by @aldy505
+- adding ulimits for zookeeper, kafka, and web (#2123) by @jamincollins
+- Uninstall Docker Compose v1 from CI so it's not used for tests (#2114) by @hubertdeng123
+- Fixed docker compose issue in backup/restore (#2110) by @montaniasystemab
+- Enable upstream keepalive (#2099) by @otbutz
+- Bump commit sha for e2e test action (#2104) by @hubertdeng123
+- Use docker compose exec to account for differences in container names for Postgres upgrade (#2096) by @hubertdeng123
+- Change symbolicator to use CalVer for release (#2091) by @hubertdeng123
+
+## 23.4.0
+
+### Postgres 14 Upgrade
+
+We've now included an upgrade from Postgres 9.6 to 14.5 that will automatically be run via the `./install.sh` script.
+
+By: @hubertdeng123 (#2074)
+
+### Various fixes & improvements
+
+- Remove clean function testing line (#2082) by @hubertdeng123
+- Fix command to get docker compose version in problem report template (#2080) by @hubertdeng123
+- Tweak permissioning of backup file in backup script to read/write for all users (#2043) by @hubertdeng123
+- Remove commit-batch-size parameter (#2058) by @hubertdeng123
+- Support external sourcemaps bigger, than 1Mb (#2050) by @le0pard
+- Add github setup instructions to config.example.yml (#2051) by @tm1000
+- ref(snuba): Use snuba self-hosted settings (#2039) by @enochtangg
+
+## 23.3.1
+
+### Various fixes & improvements
+
+- Bump Kafka version to keep up with SaaS (#2037) by @chadwhitacre
+- Add Backup/restore scripts (#2029) by @hubertdeng123
+- Add opt in error monitoring to reset and clean scripts (#2021) by @hubertdeng123
+
+## 23.3.0
+
+### Various fixes & improvements
+
+- Remove ZooKeeper snapshot (#2020) by @dereckson
+- feat(snuba): Add snuba sessions subscription service (#2006) by @klboke
+- Add backup/restore integration tests (#2012) by @hubertdeng123
+- ref(snuba): Remove snuba-cleanup, snuba-transactions-cleanup jobs (#2003) by @klboke
+- ref(replays): Remove the session-replay-ui flag (#2010) by @ryan953
+- Remove broken replay integration test (#2011) by @hubertdeng123
+- Bump self-hosted-e2e-tests action commit sha (#2008) by @hubertdeng123
+- Revert symbolicator tests (#2004) by @hubertdeng123
+- post-process-forwarder: Update CLI command (#1999) by @lynnagara
+- feat(replays): add replays to self hosted (#1990) by @JoshFerge
+- Remove issue status helper automation (#1989) by @hubertdeng123
+- Add proxy buffer size config to fix Bad Gateway (#1984) by @SCjona
+- Reference paths relative to project root (#1800) by @spawnia
+- Run close stale issues/PRs only on getsentry (#1969) by @aminvakil
+
+## 23.2.0
+
+### Various fixes & improvements
+
+- Run lock issues/PRs only on getsentry (#1966) by @aminvakil
+- Updates Redis to 6.2.10 (#1937) by @danielhartnell
+- Handle missing example files gracefully (#1950) by @chadwhitacre
+- Fix post-release.sh for `git pull` (#1938) by @BYK
+- Manually change 23.1.1 to nightly (#1936) by @hubertdeng123
+
+## 23.1.1
+
+### Various fixes & improvements
+
+- ci: Add test for symbolicator pipeline (#1916) by @ethanhs
+
 ## 23.1.0
 
 ### Various fixes & improvements
