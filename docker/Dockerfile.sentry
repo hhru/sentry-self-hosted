@@ -1,4 +1,4 @@
-ARG SENTRY_VERSION=23.5.1
+ARG SENTRY_VERSION=23.6.2
 ARG SENTRY_IMAGE=getsentry/sentry:${SENTRY_VERSION}
 FROM ${SENTRY_IMAGE}
  
@@ -7,7 +7,7 @@ RUN set -xe && \
     apt-get update -qq && \
     apt-get install -qq -y --no-install-recommends build-essential libsasl2-dev libldap2-dev libssl-dev && \
     cd /tmp && \
-    pip install --no-cache-dir --prefer-binary sentry-auth-ldap==21.9.11 && \
+    pip install --no-cache-dir --prefer-binary sentry-auth-ldap==23.6.0 && \
     apt-mark manual $(dpkg-query --show -f '${Package} ' 'libsasl2*' 'libldap*' 'libssl*') && \
     apt-mark auto build-essential $(dpkg-query --show -f '${Package} ' '*-dev') && \
     apt-get autoremove -qq -y --purge && \
