@@ -3,6 +3,7 @@ docker_files:
   sentry-hh: docker/Dockerfile.sentry
   relay-hh: docker/Dockerfile.relay
   snuba-hh: docker/Dockerfile.snuba
+  vroom-hh: docker/Dockerfile.vroom
 docker_context: .
 build_method: nope_build
 update_method: python_update
