@@ -4,6 +4,7 @@ docker_files:
   relay-hh: docker/Dockerfile.relay
   snuba-hh: docker/Dockerfile.snuba
   vroom-hh: docker/Dockerfile.vroom
+  symbolicator-hh: docker/Dockerfile.symbolicator
 docker_context: .
 build_method: nope_build
 update_method: python_update
