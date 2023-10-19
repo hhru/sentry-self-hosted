@@ -119,7 +119,7 @@ services:
       test: echo stats | nc 127.0.0.1 11211
   redis:
     <<: *restart_policy
-    image: "redis:6.2.12-alpine"
+    image: "redis:6.2.13-alpine"
     healthcheck:
       <<: *healthcheck_defaults
       test: redis-cli ping
@@ -244,7 +244,7 @@ services:
       timeout: 10s
       retries: 30
   geoipupdate:
-    image: "maxmindinc/geoipupdate:v6.0.0"
+    image: "ghcr.io/maxmind/geoipupdate:v6.0.0"
     # Override the entrypoint in order to avoid using envvars for config.
     # Futz with settings so we can keep mmdb and conf in same dir on host
     # (image looks for them in separate dirs by default).
