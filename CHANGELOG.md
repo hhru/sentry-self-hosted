@@ -1,5 +1,17 @@
 # Changelog
 
+## 23.11.0
+
+### Various fixes & improvements
+
+- feat: provide a toggle to enable discord integration (#2548) by @aldy505
+- ref: fix a typo (#2556) by @asottile-sentry
+- ref: use `git branch --show-current` instead of sed (#2550) by @asottile-sentry
+- Remove sessions infra (#2514) by @hubertdeng123
+- Upgrade Clickhouse to 21.8 (#2536) by @hubertdeng123
+- [Snyk] Security upgrade debian from bullseye-slim to bookworm-20231009-slim (#2511) by @Indigi-managed
+- snuba: Remove deprecated CLI arg (#2515) by @lynnagara
+
 ## 23.10.1
 
 ### Various fixes & improvements
@@ -277,7 +289,7 @@ By: @hubertdeng123 (#2074)
 
 - fix "services.web.healthcheck.retries must be a number" (#1482) by @yuval1986
 - Add volume for nginx cache (#1511) by @glensc
-- snuba: New subscriptions infrastucture rollout (#1507) by @lynnagara
+- snuba: New subscriptions infrastructure rollout (#1507) by @lynnagara
 - Ease modification of base image (#1479) by @spawnia
 
 ## 22.5.0
