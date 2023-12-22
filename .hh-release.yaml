@@ -1,10 +1,10 @@
 version: 23.11.2
 docker_files:
-  sentry-hh: docker/Dockerfile.sentry
-  relay-hh: docker/Dockerfile.relay
-  snuba-hh: docker/Dockerfile.snuba
-  vroom-hh: docker/Dockerfile.vroom
-  symbolicator-hh: docker/Dockerfile.symbolicator
+  getsentry/sentry-hh: docker/Dockerfile.sentry
+  getsentry/relay-hh: docker/Dockerfile.relay
+  getsentry/snuba-hh: docker/Dockerfile.snuba
+  getsentry/vroom-hh: docker/Dockerfile.vroom
+  getsentry/symbolicator-hh: docker/Dockerfile.symbolicator
 docker_context: .
 build_method: nope_build
 update_method: python_update
