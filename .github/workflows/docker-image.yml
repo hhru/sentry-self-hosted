@@ -20,6 +20,8 @@ jobs:
           - sentry
           - relay
           - snuba
+          - symbolicator
+          - vroom
     steps:
       - name: Build docker images
         uses: docker/build-push-action@v3
