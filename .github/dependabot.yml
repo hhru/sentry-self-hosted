@@ -1,0 +1,23 @@
+---
+
+version: 2
+updates:
+  - package-ecosystem: pip
+    directory: /docker
+    schedule:
+      interval: weekly
+      day: sunday
+    open-pull-requests-limit: 99
+    commit-message:
+      prefix: pip-docker
+    labels:
+      - pip dependencies
+    groups:
+      autoweb:
+        patterns:
+          - '*'
+
+  - package-ecosystem: docker
+    directory: /docker
+    schedule:
+      interval: weekly
