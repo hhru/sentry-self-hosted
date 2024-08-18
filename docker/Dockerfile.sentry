@@ -3,14 +3,15 @@ ARG SENTRY_IMAGE=getsentry/sentry:${SENTRY_VERSION}
 ARG APPLICATION=sentry-hh=24.7.1-1
 FROM ${SENTRY_IMAGE}
 
+COPY docker/requirements-extra.txt /tmp/
 RUN set -xe && \
     echo 'debconf debconf/frontend select noninteractive' | debconf-set-selections && \
     apt-get update -qq && \
-    apt-get install -qq -y --no-install-recommends build-essential libsasl2-dev libldap2-dev libssl-dev && \
+    apt-get install -qq -y --no-install-recommends build-essential libsasl2-dev libldap2-dev libssl-dev git && \
     cd /tmp && \
-    pip install --no-cache-dir --prefer-binary sentry-auth-ldap==23.6.0 django-redis==5.4.0 && \
+    pip install --no-cache-dir --prefer-binary -r /tmp/requirements-extra.txt && \
     apt-mark manual $(dpkg-query --show -f '${Package} ' 'libsasl2*' 'libldap*' 'libssl*') && \
-    apt-mark auto build-essential $(dpkg-query --show -f '${Package} ' '*-dev') && \
+    apt-mark auto build-essential git $(dpkg-query --show -f '${Package} ' '*-dev') && \
     apt-get autoremove -qq -y --purge && \
     apt-get clean -qq -y && \
     rm -rf -- /var/lib/apt/lists/ /tmp/*
