@@ -1,4 +1,4 @@
-version: 24.7.1-7
+version: 24.8.0
 docker_files:
   getsentry/sentry-hh: docker/Dockerfile.sentry
   getsentry/relay-hh: docker/Dockerfile.relay
