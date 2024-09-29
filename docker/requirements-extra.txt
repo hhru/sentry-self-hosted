@@ -1,4 +1,4 @@
-sentry-auth-ldap==23.6.0
+sentry-auth-ldap==23.6.1
 django-redis==5.4.0
 scylla-driver==3.26.9
 git+https://github.com/doc-sheet/sentry-cassandra-nodestorage.git@e5632e1fccce1b6aeb612d0444db0807ca966993
