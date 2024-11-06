@@ -1,6 +1,6 @@
 ARG SENTRY_VERSION=24.10.0
 ARG SENTRY_IMAGE=getsentry/sentry:${SENTRY_VERSION}
-ARG APPLICATION=sentry-hh=24.9.0-7-1
+ARG APPLICATION=sentry-hh=24.10.0-7-1
 FROM ${SENTRY_IMAGE}
 
 COPY docker/requirements-extra.txt /tmp/
