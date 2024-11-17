@@ -24,7 +24,7 @@ jobs:
           - vroom
     steps:
       - name: Build docker images
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v6
         with:
           push: false
           tags: '${{ matrix.image-name }}-hh:${{ github.sha }}'
