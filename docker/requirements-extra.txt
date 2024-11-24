@@ -2,5 +2,5 @@
 # temporary replacement
 git+https://github.com/sergey-gr/sentry-auth-ldap.git@6d0f5aabd9bd2ba847f8cf6958efd97d728b17c3
 django-redis==5.4.0
-scylla-driver==3.26.9
+scylla-driver==3.28.0
 git+https://github.com/doc-sheet/sentry-cassandra-nodestorage.git@e5632e1fccce1b6aeb612d0444db0807ca966993
