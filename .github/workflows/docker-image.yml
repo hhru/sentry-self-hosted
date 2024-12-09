@@ -14,6 +14,7 @@ jobs:
       security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
     runs-on: ubuntu-latest
     strategy:
+      max-parallel: 2
       fail-fast: false
       matrix:
         image-name:
@@ -31,7 +32,7 @@ jobs:
           file: 'docker/Dockerfile.${{ matrix.image-name }}'
 
       - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@915b19bbe73b92a6cf82a1bc12b087c9a19a5fe2
+        uses: aquasecurity/trivy-action@18f2510ee396bbf400402947b394f2dd8c87dbb0
         with:
           image-ref: '${{ matrix.image-name }}-hh:${{ github.sha }}'
           format: sarif
@@ -39,12 +40,12 @@ jobs:
           severity: 'CRITICAL,HIGH'
 
       - name: Upload Trivy scan results to GitHub Security tab
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@aa578102511db1f4524ed59b8cc2bae4f6e88195
         with:
           sarif_file: '${{ matrix.image-name }}-trivy-results.sarif'
 
       - name: Run the Anchore Grype scan action
-        uses: anchore/scan-action@f2ba85e044c8f5e5014c9a539328a9c78d3bfa49
+        uses: anchore/scan-action@869c549e657a088dc0441b08ce4fc0ecdac2bb65
         id: scan
         with:
           image: '${{ matrix.image-name }}-hh:${{ github.sha }}'
@@ -52,6 +53,6 @@ jobs:
           severity-cutoff: critical
 
       - name: Upload vulnerability report
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@aa578102511db1f4524ed59b8cc2bae4f6e88195
         with:
           sarif_file: '${{ steps.scan.outputs.sarif }}'
