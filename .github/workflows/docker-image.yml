@@ -40,12 +40,12 @@ jobs:
           severity: 'CRITICAL,HIGH'
 
       - name: Upload Trivy scan results to GitHub Security tab
-        uses: github/codeql-action/upload-sarif@aa578102511db1f4524ed59b8cc2bae4f6e88195
+        uses: github/codeql-action/upload-sarif@df409f7d9260372bd5f19e5b04e83cb3c43714ae
         with:
           sarif_file: '${{ matrix.image-name }}-trivy-results.sarif'
 
       - name: Run the Anchore Grype scan action
-        uses: anchore/scan-action@869c549e657a088dc0441b08ce4fc0ecdac2bb65
+        uses: anchore/scan-action@abae793926ec39a78ab18002bc7fc45bbbd94342
         id: scan
         with:
           image: '${{ matrix.image-name }}-hh:${{ github.sha }}'
@@ -53,6 +53,6 @@ jobs:
           severity-cutoff: critical
 
       - name: Upload vulnerability report
-        uses: github/codeql-action/upload-sarif@aa578102511db1f4524ed59b8cc2bae4f6e88195
+        uses: github/codeql-action/upload-sarif@df409f7d9260372bd5f19e5b04e83cb3c43714ae
         with:
           sarif_file: '${{ steps.scan.outputs.sarif }}'

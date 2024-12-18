@@ -59,7 +59,6 @@ x-sentry-defaults: &sentry_defaults
     SENTRY_EVENT_RETENTION_DAYS:
     SENTRY_MAIL_HOST:
     SENTRY_MAX_EXTERNAL_SOURCEMAP_SIZE:
-    OPENAI_API_KEY:
   volumes:
     - "sentry-data:/data"
     - "./sentry:/etc/sentry"
@@ -118,6 +117,7 @@ services:
       nofile:
         soft: 10032
         hard: 10032
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
   postgres:
     <<: *restart_policy
     # Using the same postgres version as Sentry dev for consistency purposes
