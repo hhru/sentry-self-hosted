@@ -45,7 +45,7 @@ jobs:
           sarif_file: '${{ matrix.image-name }}-trivy-results.sarif'
 
       - name: Run the Anchore Grype scan action
-        uses: anchore/scan-action@abae793926ec39a78ab18002bc7fc45bbbd94342
+        uses: anchore/scan-action@7c05671ae9be166aeb155bad2d7df9121823df32
         id: scan
         with:
           image: '${{ matrix.image-name }}-hh:${{ github.sha }}'
